@@ -1,4 +1,4 @@
-from rest_framework import serializers
+from rest_framework import fields, serializers
 
 from account.models import Account
 
@@ -33,3 +33,8 @@ class RegisterationSerializer(serializers.ModelSerializer):
 
 
 
+class AccountPropertiesSerializer(serializers.Serializer):
+    
+    class Meta:
+        model =Account
+        fields = {'email' ,'username', 'pk'}
